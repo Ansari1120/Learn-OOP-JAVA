@@ -1,0 +1,822 @@
+package App;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JEditorPane;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.Color;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JRadioButton;
+import javax.swing.JMenuBar;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.AncestorEvent;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+
+public class Calculator {
+
+	private JFrame frame;
+	private JTextField val1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Calculator window = new Calculator();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Calculator() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(135, 206, 235));
+		frame.setBackground(new Color(0x85c0c9));
+		frame.setForeground(new Color(0x85c0c9));
+		frame.getContentPane().setForeground(new Color(0x85c0c9));
+		frame.setBounds(100, 100, 711, 420);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+		frame.setResizable(false);
+		frame.setTitle("CALCULATOR");
+		JEditorPane editorPane = new JEditorPane();
+		editorPane.setBounds(0, 22, 337, 73);
+		//val2.setBounds(0, 48, 683, 47);
+		//val1.setBounds(0, 22, 683, 26);
+
+		frame.getContentPane().add(editorPane);
+		JTextField val2 = new JTextField();
+		val2.setFont(new Font("Tahoma", Font.BOLD, 15));
+		val2.setHorizontalAlignment(SwingConstants.RIGHT);
+		val2.setBorder(null);
+		val2.setBounds(0, 48, 321, 47);
+		frame.getContentPane().add(val2);
+		val2.setColumns(10);
+		
+		val1 = new JTextField();
+		val1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		val1.setHorizontalAlignment(SwingConstants.RIGHT);
+		val1.setBorder(null);
+		val1.setBounds(0, 22, 321, 26);
+		frame.getContentPane().add(val1);
+		val1.setColumns(10);
+		
+
+		
+		JButton btnNewButton_10 = new JButton("+");
+		btnNewButton_10.setForeground(SystemColor.windowText);
+		btnNewButton_10.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_10.setBackground(new Color(153, 180, 209));
+		btnNewButton_10.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val1.setText(val2.getText());
+			 actionRecieved.setText("add");
+			 val2.setText(null);
+			// val1.setText(val2.getText());
+			}
+		});
+		btnNewButton_10.setBounds(268, 169, 68, 30);
+		frame.getContentPane().add(btnNewButton_10);
+		
+		JButton btnNewButton_11 = new JButton("-");
+		btnNewButton_11.setForeground(SystemColor.windowText);
+		btnNewButton_11.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_11.setBackground(new Color(153, 180, 209));
+		btnNewButton_11.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnNewButton_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val1.setText(val2.getText());
+				 actionRecieved.setText("sub");
+				 val2.setText(null);
+			}
+		});
+		btnNewButton_11.setBounds(268, 210, 68, 30);
+		frame.getContentPane().add(btnNewButton_11);
+		
+		JButton btnNewButton_12 = new JButton("/");
+		btnNewButton_12.setForeground(SystemColor.windowText);
+		btnNewButton_12.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_12.setBackground(new Color(153, 180, 209));
+		btnNewButton_12.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val1.setText(val2.getText());
+				 actionRecieved.setText("div");
+				 val2.setText(null);
+			}
+		});
+		btnNewButton_12.setBounds(268, 251, 68, 30);
+		frame.getContentPane().add(btnNewButton_12);
+		
+		JButton btnNewButton_13 = new JButton("*");
+		btnNewButton_13.setForeground(SystemColor.windowText);
+		btnNewButton_13.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_13.setBackground(new Color(153, 180, 209));
+		btnNewButton_13.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val1.setText(val2.getText());
+				 actionRecieved.setText("mul");
+				 val2.setText(null);
+			}
+		});
+		btnNewButton_13.setBounds(268, 292, 68, 30);
+		frame.getContentPane().add(btnNewButton_13);
+		
+
+		
+		JButton btnC = new JButton(" CLR");
+		btnC.setForeground(SystemColor.windowText);
+		btnC.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnC.setBackground(new Color(153, 180, 209));
+		btnC.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val1.setText(null);
+				val2.setText(null);
+			}
+		});
+		btnC.setBounds(268, 333, 68, 30);
+		frame.getContentPane().add(btnC);
+		
+		
+		
+		
+		JLabel lblNewLabel = new JLabel("ADVANCED CALCULATOR");
+		lblNewLabel.setForeground(Color.DARK_GRAY);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(57, 0, 245, 25);
+		frame.getContentPane().add(lblNewLabel);
+	
+		JButton btnNewButton = new JButton("9");
+		btnNewButton.setForeground(SystemColor.windowText);
+		btnNewButton.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton.setBackground(new Color(153, 180, 209));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+9);
+				
+			}
+		});
+		btnNewButton.setBounds(10, 169, 68, 30);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("8");
+		btnNewButton_1.setForeground(SystemColor.windowText);
+		btnNewButton_1.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_1.setBackground(new Color(153, 180, 209));
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+8);
+			}
+		});
+		btnNewButton_1.setBounds(86, 169, 68, 30);
+		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("7");
+		btnNewButton_2.setForeground(SystemColor.windowText);
+		btnNewButton_2.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_2.setBackground(new Color(153, 180, 209));
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+7);
+			}
+		});
+		btnNewButton_2.setBounds(164, 169, 68, 30);
+		frame.getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("4");
+		btnNewButton_3.setForeground(SystemColor.windowText);
+		btnNewButton_3.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_3.setBackground(new Color(153, 180, 209));
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+4);
+			}
+		});
+		btnNewButton_3.setBounds(164, 217, 68, 30);
+		frame.getContentPane().add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("5");
+		btnNewButton_4.setForeground(SystemColor.windowText);
+		btnNewButton_4.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_4.setBackground(new Color(153, 180, 209));
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+5);
+			}
+		});
+		btnNewButton_4.setBounds(86, 217, 68, 30);
+		frame.getContentPane().add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("6");
+		btnNewButton_5.setForeground(SystemColor.windowText);
+		btnNewButton_5.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_5.setBackground(new Color(153, 180, 209));
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+6);
+			}
+		});
+		btnNewButton_5.setBounds(10, 217, 68, 30);
+		frame.getContentPane().add(btnNewButton_5);
+		
+		JButton btnNewButton_6 = new JButton("3");
+		btnNewButton_6.setForeground(SystemColor.windowText);
+		btnNewButton_6.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_6.setBackground(new Color(153, 180, 209));
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+3);
+			}
+		});
+		btnNewButton_6.setBounds(10, 268, 68, 30);
+		frame.getContentPane().add(btnNewButton_6);
+		
+		JButton btnNewButton_7 = new JButton("2");
+		btnNewButton_7.setForeground(SystemColor.windowText);
+		btnNewButton_7.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_7.setBackground(new Color(153, 180, 209));
+		btnNewButton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+2);
+			}
+		});
+		btnNewButton_7.setBounds(86, 268, 68, 30);
+		frame.getContentPane().add(btnNewButton_7);
+		
+		JButton btnNewButton_8 = new JButton("1");
+		btnNewButton_8.setForeground(SystemColor.windowText);
+		btnNewButton_8.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_8.setBackground(new Color(153, 180, 209));
+		btnNewButton_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+1);
+			}
+		});
+		btnNewButton_8.setBounds(164, 268, 68, 30);
+		frame.getContentPane().add(btnNewButton_8);
+		
+		JButton btnNewButton_9 = new JButton("0");
+		btnNewButton_9.setForeground(SystemColor.windowText);
+		btnNewButton_9.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_9.setBackground(new Color(153, 180, 209));
+		btnNewButton_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+0);
+			}
+		});
+		 
+			JComboBox comboBox = new JComboBox();
+			 comboBox_1 = new JComboBox();
+			 comboBox_1.addActionListener(new ActionListener() {
+			 	public void actionPerformed(ActionEvent e) {
+			 		comboBox.getSelectedItem().equals(comboBox_1);
+						val1.setText(val2.getText());
+			 		
+			 	}
+			 });
+			 JButton btnC_1 = new JButton(" CLR");
+				btnC_1.setForeground(Color.BLACK);
+				btnC_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+				btnC_1.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnC_1.setBackground(SystemColor.activeCaption);
+				btnC_1.setBounds(379, 338, 68, 30);
+				frame.getContentPane().add(btnC_1);
+				
+				JButton btnNewButton_13_1 = new JButton("\u221A");
+				btnNewButton_13_1.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//val1.setText(val2.getText());
+						//actionRecieved.setText("btnNewButton_13_1");
+						// val2.setText(null);
+							double ops=Double.parseDouble(String.valueOf(val2.getText()));
+							ops=Math.sqrt(ops);
+							val2.setText(String.valueOf("SQUARE ROOT = "+ops));
+					}
+				});
+				btnNewButton_13_1.setForeground(Color.BLACK);
+				btnNewButton_13_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+				btnNewButton_13_1.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnNewButton_13_1.setBackground(SystemColor.activeCaption);
+				btnNewButton_13_1.setBounds(379, 299, 68, 30);
+				frame.getContentPane().add(btnNewButton_13_1);
+				
+				JButton btnNewButton_12_1 = new JButton("Cot");
+				btnNewButton_12_1.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						double ops8=Double.parseDouble(String.valueOf(val2.getText()));
+						ops8=Math.tanh(ops8);
+						val2.setText(String.valueOf("Cot = "+ops8));
+					}
+				});
+				btnNewButton_12_1.setForeground(Color.BLACK);
+				btnNewButton_12_1.setFont(new Font("Dialog", Font.BOLD, 12));
+				btnNewButton_12_1.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnNewButton_12_1.setBackground(SystemColor.activeCaption);
+				btnNewButton_12_1.setBounds(379, 258, 68, 30);
+				frame.getContentPane().add(btnNewButton_12_1);
+				
+				JButton btnNewButton_11_1 = new JButton("Tan");
+				btnNewButton_11_1.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						double ops5=Double.parseDouble(String.valueOf(val2.getText()));
+						ops5=Math.tan(ops5);
+						val2.setText(String.valueOf("Tangent = "+ops5));
+					}
+				});
+				btnNewButton_11_1.setForeground(Color.BLACK);
+				btnNewButton_11_1.setFont(new Font("Dialog", Font.BOLD, 12));
+				btnNewButton_11_1.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnNewButton_11_1.setBackground(SystemColor.activeCaption);
+				btnNewButton_11_1.setBounds(379, 217, 68, 30);
+				frame.getContentPane().add(btnNewButton_11_1);
+				
+				JButton btnNewButton_10_1 = new JButton("Log");
+				btnNewButton_10_1.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						double ops1=Double.parseDouble(String.valueOf(val2.getText()));
+						ops1=Math.log(ops1);
+						val2.setText(String.valueOf("LOG = "+ops1));
+					}
+				});
+				btnNewButton_10_1.setForeground(Color.BLACK);
+				btnNewButton_10_1.setFont(new Font("Dialog", Font.BOLD, 12));
+				btnNewButton_10_1.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnNewButton_10_1.setBackground(SystemColor.activeCaption);
+				btnNewButton_10_1.setBounds(379, 169, 68, 30);
+				frame.getContentPane().add(btnNewButton_10_1);
+				
+				JButton btnC_2 = new JButton(" CLR");
+				btnC_2.setForeground(Color.BLACK);
+				btnC_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+				btnC_2.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnC_2.setBackground(SystemColor.activeCaption);
+				btnC_2.setBounds(457, 338, 68, 30);
+				frame.getContentPane().add(btnC_2);
+				
+				JButton btnNewButton_13_2 = new JButton("\u03C0");
+				btnNewButton_13_2.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//val1.setText(val2.getText());
+						actionRecieved.setText("pi");
+						 //val2.setText(null);
+						double ops10;
+						ops10=(3.14159265359);
+						val2.setText(String.valueOf(ops10));
+						 
+					}
+				});
+				btnNewButton_13_2.setForeground(Color.BLACK);
+				btnNewButton_13_2.setFont(new Font("Tahoma", Font.BOLD, 15));
+				btnNewButton_13_2.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnNewButton_13_2.setBackground(SystemColor.activeCaption);
+				btnNewButton_13_2.setBounds(457, 299, 68, 30);
+				frame.getContentPane().add(btnNewButton_13_2);
+				
+				JButton btnNewButton_12_2 = new JButton("X^2");
+				btnNewButton_12_2.setForeground(Color.BLACK);
+				btnNewButton_12_2.setFont(new Font("Dialog", Font.BOLD, 12));
+				btnNewButton_12_2.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnNewButton_12_2.setBackground(SystemColor.activeCaption);
+				btnNewButton_12_2.setBounds(457, 258, 68, 30);
+				frame.getContentPane().add(btnNewButton_12_2);
+				
+				JButton btnNewButton_11_2 = new JButton("Cosec");
+				btnNewButton_11_2.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						double ops6=Double.parseDouble(String.valueOf(val2.getText()));
+						ops6=Math.sinh(ops6);
+						val2.setText(String.valueOf("Cosec= "+ops6));
+					}
+				});
+				btnNewButton_11_2.setForeground(Color.BLACK);
+				btnNewButton_11_2.setFont(new Font("Dialog", Font.BOLD, 12));
+				btnNewButton_11_2.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnNewButton_11_2.setBackground(SystemColor.activeCaption);
+				btnNewButton_11_2.setBounds(457, 217, 68, 30);
+				frame.getContentPane().add(btnNewButton_11_2);
+				
+				JButton btnNewButton_10_2 = new JButton("Sin");
+				btnNewButton_10_2.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						double ops2=Double.parseDouble(String.valueOf(val2.getText()));
+						ops2=Math.sin(ops2);
+						val2.setText(String.valueOf("Sin = "+ops2));
+					}
+				});
+				btnNewButton_10_2.setForeground(Color.BLACK);
+				btnNewButton_10_2.setFont(new Font("Dialog", Font.BOLD, 12));
+				btnNewButton_10_2.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnNewButton_10_2.setBackground(SystemColor.activeCaption);
+				btnNewButton_10_2.setBounds(457, 169, 68, 30);
+				frame.getContentPane().add(btnNewButton_10_2);
+				
+				JButton btnNewButton_13_3 = new JButton("*");
+				btnNewButton_13_3.setForeground(Color.BLACK);
+				btnNewButton_13_3.setFont(new Font("Tahoma", Font.BOLD, 15));
+				btnNewButton_13_3.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnNewButton_13_3.setBackground(SystemColor.activeCaption);
+				btnNewButton_13_3.setBounds(535, 299, 68, 30);
+				frame.getContentPane().add(btnNewButton_13_3);
+				
+				JButton btnNewButton_12_3 = new JButton("X^3");
+				btnNewButton_12_3.setForeground(Color.BLACK);
+				btnNewButton_12_3.setFont(new Font("Dialog", Font.BOLD, 12));
+				btnNewButton_12_3.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnNewButton_12_3.setBackground(SystemColor.activeCaption);
+				btnNewButton_12_3.setBounds(535, 258, 68, 30);
+				frame.getContentPane().add(btnNewButton_12_3);
+				
+				JButton btnNewButton_11_3 = new JButton("Sec");
+				btnNewButton_11_3.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						double ops7=Double.parseDouble(String.valueOf(val2.getText()));
+						ops7=Math.cosh(ops7);
+						val2.setText(String.valueOf("Sec = "+ops7));
+					}
+				});
+				btnNewButton_11_3.setForeground(Color.BLACK);
+				btnNewButton_11_3.setFont(new Font("Dialog", Font.BOLD, 12));
+				btnNewButton_11_3.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnNewButton_11_3.setBackground(SystemColor.activeCaption);
+				btnNewButton_11_3.setBounds(535, 217, 68, 30);
+				frame.getContentPane().add(btnNewButton_11_3);
+				
+				JButton btnNewButton_10_3 = new JButton("Cos");
+				btnNewButton_10_3.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						double ops4=Double.parseDouble(String.valueOf(val2.getText()));
+						ops4=Math.cos(ops4);
+						val2.setText(String.valueOf("Cos = "+ops4));
+					}
+				});
+				btnNewButton_10_3.setForeground(Color.BLACK);
+				btnNewButton_10_3.setFont(new Font("Dialog", Font.BOLD, 12));
+				btnNewButton_10_3.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnNewButton_10_3.setBackground(SystemColor.activeCaption);
+				btnNewButton_10_3.setBounds(535, 169, 68, 30);
+				frame.getContentPane().add(btnNewButton_10_3);
+				
+				JButton btnC_3 = new JButton("BackSpace");
+				btnC_3.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String bsp=null;
+						if(val2.getText().length() > 0) {
+							StringBuilder strb=new StringBuilder(val2.getText());
+							strb.deleteCharAt(val2.getText().length() - 1);
+							bsp=strb.toString();
+							val2.setText(bsp);
+						}
+					}
+				});
+				btnC_3.setForeground(Color.BLACK);
+				btnC_3.setFont(new Font("Tahoma", Font.BOLD, 10));
+				btnC_3.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+				btnC_3.setBackground(SystemColor.activeCaption);
+				btnC_3.setBounds(268, 136, 68, 30);
+				frame.getContentPane().add(btnC_3);
+
+			comboBox.setModel(new DefaultComboBoxModel(new String[] {"No_Option_Selected", "Length", "Volume", "Weight & mass", "Temprature ", "Area", "Speed", "Power", "Pressure"}));
+			comboBox.setBounds(10, 136, 124, 22);
+			frame.getContentPane().add(comboBox);
+		
+			comboBox.addActionListener(new ActionListener() {
+				
+				public void actionPerformed(ActionEvent e) {
+					if(comboBox.getSelectedItem().equals("No_Option_Selected")) {
+						comboBox_1.setVisible(false);
+					}
+					else if(comboBox.getSelectedItem().equals("Length")) {
+						comboBox_1.setSelectedItem(null);
+						comboBox_1.addItem("Meter_Into_Centimeter");
+						comboBox_1.addItem("Centimeter_Into_Meter");
+						comboBox_1.addItem("Inches_Into_Feet");
+						comboBox_1.addItem("Feet_Into_Inches");
+						comboBox_1.addItem("Inches_Into_Feet");
+						comboBox_1.addItem("Kilometers_Into_Meters");
+						comboBox_1.addItem("Meters_Into_Kilometers");
+						comboBox_1.addItem("Yards_Into_Miles");
+						comboBox_1.addItem("Miles_Into_Yards");
+						//comboBox_1.removeAllItems();
+						comboBox_1.setBounds(122, 106, 173, 22);
+					}
+					else if(comboBox.getSelectedItem().equals("Volume")) {
+						comboBox_1.setSelectedItem(null);
+						comboBox_1.addItem("Liters_Into_MiliLiters");
+						comboBox_1.addItem("MiliLiters_Into_Liters");
+						comboBox_1.setBounds(122, 106, 173, 22);
+					}	else if(comboBox.getSelectedItem().equals("Weight & mass")) {
+						comboBox_1.setSelectedItem(null);
+						comboBox_1.addItem("KiloGrams_Into_Grams");
+						comboBox_1.addItem("Grams_Into_KiloGrams");
+						comboBox_1.addItem("Pounds_Into_Grams");
+						comboBox_1.addItem("Pounds_Into_KiloGrams");
+						comboBox_1.addItem("KiloGrams_Into_Pounds");
+						comboBox_1.addItem("Grams_Into_Pounds");
+						comboBox_1.addItem("Tones_Into_KiloGrams");
+						comboBox_1.addItem("Tones_Into_Pounds");
+						comboBox_1.addItem("Pounds_Into_Tones");
+						comboBox_1.setBounds(122, 106, 173, 22);
+					}
+					else if(comboBox.getSelectedItem().equals("Temprature")) {
+						comboBox_1.setSelectedItem(null);
+						comboBox_1.addItem("Celsius_Into_Fahrenheit");
+						comboBox_1.addItem("Fahrenheit_Into_Celsius");
+						comboBox_1.addItem("Kelvin_Into_Fahrenheit");
+						comboBox_1.addItem("Kelvin_Into_Celsius");
+						comboBox_1.setBounds(122, 106, 173, 22);
+					}
+					else if(comboBox.getSelectedItem().equals("Area")) {
+						comboBox_1.setSelectedItem(null);
+						comboBox_1.addItem("Meter_Into_Feet");
+						comboBox_1.addItem("Feet_Into_Meter");
+						comboBox_1.addItem("Acres_Into_Meter");
+						comboBox_1.addItem("Acres_Into_Feet");
+						comboBox_1.addItem("Feet_Into_Acres");
+						comboBox_1.addItem("Meter_Into_Acres");
+						comboBox_1.setBounds(122, 106, 173, 22);
+					}
+					else if(comboBox.getSelectedItem().equals("Speed")) {
+						comboBox_1.setSelectedItem(null);
+						comboBox_1.addItem("Kmph_Into_mph");
+						comboBox_1.addItem("mph_Into_kmph");
+						comboBox_1.addItem("mps_Into_kmph");
+						comboBox_1.addItem("kmph_Into_mps");
+						comboBox_1.setBounds(122, 106, 173, 22);
+					}
+					else if(comboBox.getSelectedItem().equals("Power")) {
+						comboBox_1.setSelectedItem(null);
+						comboBox_1.addItem("Watts_Into_KiloWatts");
+						comboBox_1.addItem("KiloWatts_Into_Watts");
+						comboBox_1.addItem("Horsepower_Into_Watts");
+						comboBox_1.addItem("Horsepower_Into_KiloWatts");
+						comboBox_1.addItem("Watts_Into_Horsepower");
+						comboBox_1.addItem("KiloWatts_Into_Horsepower");
+						comboBox_1.setBounds(122, 106, 173, 22);
+					}
+					else if(comboBox.getSelectedItem().equals("Pressure")) {
+						comboBox_1.setSelectedItem(null);
+						comboBox_1.addItem("Atmosphere_Into_Psi");
+						comboBox_1.addItem("Atmosphere_Into_Kpa");
+						comboBox_1.addItem("Psi_Into_Atmosphere");
+						comboBox_1.addItem("Kpa_Into_Atmosphere");
+						comboBox_1.addItem("Pascals_Into_Atmosphere");
+						comboBox_1.addItem("Atmosphere_Into_Pascal");
+						comboBox_1.addItem("kpa_Into_Pascal");
+						comboBox_1.addItem("Pascal_Into_Kpa");
+						comboBox_1.addItem("Pascal_Into_Psi");
+						comboBox_1.addItem("Psi_Into_Pascal");
+						comboBox_1.setBounds(122, 106, 173, 22);
+					}
+					 
+					comboBox.addActionListener(new ActionListener() {
+					    @Override
+					    public void actionPerformed(ActionEvent e) {
+					        JComboBox dropdown = (JComboBox)e.getSource();
+					        DefaultComboBoxModel model = (DefaultComboBoxModel)dropdown.getModel();
+					        model.equals(dropdown.getSelectedItem());
+
+					    }
+					});
+				
+					if(e.getSource()==comboBox) {
+						JComboBox cb=(JComboBox)e.getSource();
+						String showOptions=(String)cb.getSelectedItem();
+						switch(showOptions) {
+						case "Length" :
+								val1.setText(val2.getText());
+								 actionRecieved.setText("Length");
+						 break;
+						case "Volume" : val1.setText(val2.getText());
+						 actionRecieved.setText("Volume");
+						 //val2.setText(null);
+						 break;
+						case "Weigth & mass" : val1.setText(val2.getText());
+						 actionRecieved.setText("Weigth & mass");
+						 //val2.setText(null);
+						 break;
+						case "Energy" : val1.setText(val2.getText());
+						 actionRecieved.setText("Energy");
+						// val2.setText(null);
+						 break;
+						case "Temprature" : val1.setText(val2.getText());
+						 actionRecieved.setText("Temprature");
+						 //val2.setText(null);
+						 break;
+						case "Area" : val1.setText(val2.getText());
+						 actionRecieved.setText("Area");
+						 //val2.setText(null);
+						 break;
+						case "Speed" : val1.setText(val2.getText());
+						 actionRecieved.setText("Speed");
+						 //val2.setText(null);
+						 break;
+						case "Power" : val1.setText(val2.getText());
+						 actionRecieved.setText("Power");
+						 //val2.setText(null);
+						 break;
+						case "Pressure" : val1.setText(val2.getText());
+						 actionRecieved.setText("Pressure");
+						 //val2.setText(null);
+						 break;
+						}
+					}
+				}
+			});
+
+		btnNewButton_9.setBounds(10, 309, 144, 30);
+		frame.getContentPane().add(btnNewButton_9);
+		
+		comboBox.setVisible(false);
+		comboBox_1.setVisible(false);
+
+		
+		JLabel lblNewLabel_1 = new JLabel("Conversions :");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_1.setForeground(Color.BLACK);
+		lblNewLabel_1.setBounds(10, 106, 75, 19);
+		frame.getContentPane().add(lblNewLabel_1);
+		lblNewLabel_1.setVisible(false);
+		
+		frame.getContentPane().add(comboBox_1);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(0, 0, 47, 22);
+		frame.getContentPane().add(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("file");
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Standard ");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				comboBox.setVisible(false);
+				comboBox_1.setVisible(false);
+				lblNewLabel_1.setVisible(false);
+
+			}
+		});
+		mnNewMenu.add(mntmNewMenuItem);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Scientific");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				comboBox.setVisible(false);
+				comboBox_1.setVisible(false);
+				lblNewLabel_1.setVisible(false);
+				frame.setBounds(100, 100, 698, 420);
+				editorPane.setBounds(0, 22, 695, 73);
+				val2.setBounds(0, 48, 683, 47);
+				val1.setBounds(0, 22, 683, 26);
+
+			}
+		});
+		mnNewMenu.add(mntmNewMenuItem_1);
+		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Unit Conversion");
+		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				comboBox.setVisible(true);
+				comboBox_1.setVisible(true);
+				lblNewLabel_1.setVisible(true);
+
+			}
+		});
+		mnNewMenu.add(mntmNewMenuItem_2);
+		 //comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Meter_Into_Centimeter", "Centimeter_Into_Meter", "Inches_Into_Feet", "Feet_Into_Inches", "Kilometers_Into_Meters", "Meters_into_Kilometers", "Yards_Into_Miles", "Miles_Into_Yards"}));
+		JButton btnNewButton_14 = new JButton("=");
+		btnNewButton_14.setForeground(SystemColor.windowText);
+		btnNewButton_14.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnNewButton_14.setBackground(new Color(153, 180, 209));
+		btnNewButton_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				int one=Integer.parseInt(val1.getText());
+				int two=Integer.parseInt(val2.getText());
+				double three=Double.parseDouble(val2.getText());
+				int four=Integer.parseInt(val2.getText());
+				//long five=Long.parseLong(val2.getText());
+				double six=Double.parseDouble(val2.getText());
+
+				if(actionRecieved.getText().equals("add")) {
+					int add=one+two;
+					val2.setText(String.valueOf("= "+add));
+				}
+				if(actionRecieved.getText().equals("sub")) {
+					int sub=one-two;
+					val2.setText(String.valueOf(sub));
+				}
+				if(actionRecieved.getText().equals("div")) {
+					double div=one/two;
+					val2.setText(String.valueOf("= "+div));
+				}
+				if(actionRecieved.getText().equals("mul")) {
+					int mul=one*two;
+					val2.setText(String.valueOf("= "+mul));
+				}
+				//if(actionRecieved.getText().equals("\u03C0")) {
+					//double pi=six*3.14159265359;
+					//val2.setText(String.valueOf("= ")+Double.toString(pi));
+					
+				//}
+				if(actionRecieved.getText().equals("Length")) {
+					
+					if(comboBox_1.getSelectedItem().equals("Meter_Into_Centimeter")) {
+							int mtocm=four*100;
+							val2.setText(String.valueOf("= ")+Integer.toString(mtocm));
+				}
+					else if(comboBox_1.getSelectedItem().equals("Centimeter_Into_Meter")) {
+						double cmtom=three/100;
+						val2.setText(String.valueOf("= ")+Double.toString(cmtom));
+				}
+					else if(comboBox_1.getSelectedItem().equals("Inches_Into_Feet")) {
+						double itof=three/12;
+						val2.setText(String.valueOf("= ")+Double.toString(itof));
+				}
+					else if(comboBox_1.getSelectedItem().equals("Feet_Into_Inches")) {
+						int ftoi=four*12;
+						val2.setText(String.valueOf("= ")+Integer.toString(ftoi));
+				}
+					else if(comboBox_1.getSelectedItem().equals("Kilometers_Into_Meters")) {
+						double kmtom=three*12;
+						val2.setText(String.valueOf("= ")+Double.toString(kmtom));
+				}
+					else if(comboBox_1.getSelectedItem().equals("Meters_Into_Kilometers")) {
+						double mtokm=three/12;
+						val2.setText(String.valueOf("= ")+Double.toString(mtokm));
+				}
+					else if(comboBox_1.getSelectedItem().equals("Yards_Into_Miles")) {
+						double ytom=three/1760;
+						val2.setText(String.valueOf("= ")+Double.toString(ytom));
+				}
+					else if(comboBox_1.getSelectedItem().equals("Miles_Into_Yards")) {
+						int mtoy=four*1760;
+						val2.setText(String.valueOf("= ")+Integer.toString(mtoy));
+				}
+				}
+				
+				if(actionRecieved.getText().equals("Volume")) {
+                      //continue from here
+				}
+			}
+		});
+		btnNewButton_14.setBounds(164, 309, 68, 30);
+		frame.getContentPane().add(btnNewButton_14);
+		
+		JButton btnC_3_1 = new JButton(".");
+		btnC_3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!val2.getText().contains(".")) {
+					val2.setText(val2.getText()+btnC_3_1.getText());
+				}
+			}
+		});
+		btnC_3_1.setForeground(Color.BLACK);
+		btnC_3_1.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		btnC_3_1.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, null));
+		btnC_3_1.setBackground(SystemColor.activeCaption);
+		btnC_3_1.setBounds(164, 350, 68, 30);
+		frame.getContentPane().add(btnC_3_1);
+		actionRecieved = new JLabel("");
+		actionRecieved.setForeground(SystemColor.control);
+		actionRecieved.setBounds(10, 360, 37, 20);
+		actionRecieved.setVisible(false);
+		frame.getContentPane().add(actionRecieved);
+		
+	}
+	private JComboBox comboBox_1;
+	private 	JLabel actionRecieved;
+}

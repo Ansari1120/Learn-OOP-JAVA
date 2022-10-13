@@ -1,0 +1,25 @@
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Main {
+	public static void main(String[]args) {
+		JFrame frame=new JFrame();
+		JLabel label=new JLabel();
+		ImageIcon image = new ImageIcon("night_fire.png");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(500,500);
+		frame.setVisible(true);
+		
+
+		
+		
+		label.setText("My Label is here ");
+		frame.add(label);
+		label.setIcon(image);
+		
+	}
+
+}

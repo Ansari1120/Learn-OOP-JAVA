@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;audio&apos;&#x0D;&#x0A;- Original project: &apos;audio&apos;&#x0D;&#x0A;- Original element: &apos;Vintage-retro-background-music-for-games-and-videos.mp3&apos;" description="Delete element" element1="Vintage-retro-background-music-for-games-and-videos.mp3" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1631503776612" subPackages="false" version="1.0"/>
+</session>

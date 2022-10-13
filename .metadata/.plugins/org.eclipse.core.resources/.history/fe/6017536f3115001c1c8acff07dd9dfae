@@ -1,0 +1,194 @@
+package App;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JEditorPane;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+public class Calculator {
+
+	private JFrame frame;
+	private JTextField val1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Calculator window = new Calculator();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Calculator() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 351, 420);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JEditorPane editorPane = new JEditorPane();
+		editorPane.setBounds(0, 0, 335, 95);
+		frame.getContentPane().add(editorPane);
+		JTextField val2 = new JTextField();
+		val2.setHorizontalAlignment(SwingConstants.RIGHT);
+		val2.setBorder(null);
+		val2.setBounds(0, 48, 335, 47);
+		frame.getContentPane().add(val2);
+		val2.setColumns(10);
+		
+		val1 = new JTextField();
+		val1.setHorizontalAlignment(SwingConstants.RIGHT);
+		val1.setBorder(null);
+		val1.setBounds(147, 0, 188, 37);
+		frame.getContentPane().add(val1);
+		val1.setColumns(10);
+		
+		JButton btnNewButton = new JButton("9");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+9);
+				
+			}
+		});
+		btnNewButton.setBounds(10, 135, 68, 30);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("8");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+8);
+			}
+		});
+		btnNewButton_1.setBounds(86, 135, 68, 30);
+		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("7");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+7);
+			}
+		});
+		btnNewButton_2.setBounds(164, 135, 68, 30);
+		frame.getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("4");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+4);
+			}
+		});
+		btnNewButton_3.setBounds(164, 183, 68, 30);
+		frame.getContentPane().add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("5");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+5);
+			}
+		});
+		btnNewButton_4.setBounds(86, 183, 68, 30);
+		frame.getContentPane().add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("6");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+6);
+			}
+		});
+		btnNewButton_5.setBounds(10, 183, 68, 30);
+		frame.getContentPane().add(btnNewButton_5);
+		
+		JButton btnNewButton_6 = new JButton("3");
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+3);
+			}
+		});
+		btnNewButton_6.setBounds(10, 234, 68, 30);
+		frame.getContentPane().add(btnNewButton_6);
+		
+		JButton btnNewButton_7 = new JButton("2");
+		btnNewButton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+2);
+			}
+		});
+		btnNewButton_7.setBounds(86, 234, 68, 30);
+		frame.getContentPane().add(btnNewButton_7);
+		
+		JButton btnNewButton_8 = new JButton("1");
+		btnNewButton_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+1);
+			}
+		});
+		btnNewButton_8.setBounds(164, 234, 68, 30);
+		frame.getContentPane().add(btnNewButton_8);
+		
+		JButton btnNewButton_9 = new JButton("0");
+		btnNewButton_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+0);
+			}
+		});
+		btnNewButton_9.setBounds(10, 275, 144, 30);
+		frame.getContentPane().add(btnNewButton_9);
+		
+		JButton btnNewButton_10 = new JButton("+");
+		btnNewButton_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_10.setBounds(258, 135, 68, 30);
+		frame.getContentPane().add(btnNewButton_10);
+		
+		JButton btnNewButton_11 = new JButton("-");
+		btnNewButton_11.setBounds(258, 183, 68, 30);
+		frame.getContentPane().add(btnNewButton_11);
+		
+		JButton btnNewButton_12 = new JButton("/");
+		btnNewButton_12.setBounds(258, 224, 68, 30);
+		frame.getContentPane().add(btnNewButton_12);
+		
+		JButton btnNewButton_13 = new JButton("*");
+		btnNewButton_13.setBounds(258, 265, 68, 30);
+		frame.getContentPane().add(btnNewButton_13);
+		
+		JButton btnNewButton_14 = new JButton("=");
+		btnNewButton_14.setBounds(164, 275, 68, 30);
+		frame.getContentPane().add(btnNewButton_14);
+		
+		JButton btnC = new JButton("C");
+		btnC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val1.setText(null);
+				val2.setText(null);
+			}
+		});
+		btnC.setBounds(258, 304, 68, 30);
+		frame.getContentPane().add(btnC);
+		
+		
+	}
+}

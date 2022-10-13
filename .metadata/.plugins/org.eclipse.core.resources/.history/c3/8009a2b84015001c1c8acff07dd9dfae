@@ -1,0 +1,322 @@
+package App;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JEditorPane;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.Color;
+import javax.swing.border.BevelBorder;
+import java.awt.ComponentOrientation;
+
+public class Calculator {
+
+	private JFrame frame;
+	private JTextField val1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Calculator window = new Calculator();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Calculator() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(135, 206, 235));
+		frame.setBackground(new Color(0x85c0c9));
+		frame.setForeground(new Color(0x85c0c9));
+		frame.getContentPane().setForeground(new Color(30, 144, 255));
+		frame.setBounds(100, 100, 351, 420);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+		frame.setResizable(false);
+		frame.setTitle("CALCULATOR");
+		JEditorPane editorPane = new JEditorPane();
+		editorPane.setBounds(0, 22, 345, 73);
+		frame.getContentPane().add(editorPane);
+		JTextField val2 = new JTextField();
+		val2.setFont(new Font("Tahoma", Font.BOLD, 15));
+		val2.setHorizontalAlignment(SwingConstants.RIGHT);
+		val2.setBorder(null);
+		val2.setBounds(0, 48, 335, 47);
+		frame.getContentPane().add(val2);
+		val2.setColumns(10);
+		
+		val1 = new JTextField();
+		val1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		val1.setHorizontalAlignment(SwingConstants.RIGHT);
+		val1.setBorder(null);
+		val1.setBounds(157, 22, 188, 26);
+		frame.getContentPane().add(val1);
+		val1.setColumns(10);
+		
+		JButton btnNewButton = new JButton("9");
+		btnNewButton.setForeground(new Color(30, 144, 255));
+		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton.setBackground(SystemColor.textInactiveText);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+9);
+				
+			}
+		});
+		btnNewButton.setBounds(10, 169, 68, 30);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("8");
+		btnNewButton_1.setForeground(new Color(30, 144, 255));
+		btnNewButton_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_1.setBackground(SystemColor.textInactiveText);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+8);
+			}
+		});
+		btnNewButton_1.setBounds(86, 169, 68, 30);
+		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("7");
+		btnNewButton_2.setForeground(new Color(30, 144, 255));
+		btnNewButton_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_2.setBackground(SystemColor.textInactiveText);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+7);
+			}
+		});
+		btnNewButton_2.setBounds(164, 169, 68, 30);
+		frame.getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("4");
+		btnNewButton_3.setForeground(new Color(30, 144, 255));
+		btnNewButton_3.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_3.setBackground(SystemColor.textInactiveText);
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+4);
+			}
+		});
+		btnNewButton_3.setBounds(164, 217, 68, 30);
+		frame.getContentPane().add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("5");
+		btnNewButton_4.setForeground(new Color(30, 144, 255));
+		btnNewButton_4.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_4.setBackground(SystemColor.textInactiveText);
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+5);
+			}
+		});
+		btnNewButton_4.setBounds(86, 217, 68, 30);
+		frame.getContentPane().add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("6");
+		btnNewButton_5.setForeground(new Color(30, 144, 255));
+		btnNewButton_5.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_5.setBackground(SystemColor.textInactiveText);
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+6);
+			}
+		});
+		btnNewButton_5.setBounds(10, 217, 68, 30);
+		frame.getContentPane().add(btnNewButton_5);
+		
+		JButton btnNewButton_6 = new JButton("3");
+		btnNewButton_6.setForeground(new Color(30, 144, 255));
+		btnNewButton_6.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_6.setBackground(SystemColor.textInactiveText);
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+3);
+			}
+		});
+		btnNewButton_6.setBounds(10, 268, 68, 30);
+		frame.getContentPane().add(btnNewButton_6);
+		
+		JButton btnNewButton_7 = new JButton("2");
+		btnNewButton_7.setForeground(new Color(30, 144, 255));
+		btnNewButton_7.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_7.setBackground(SystemColor.textInactiveText);
+		btnNewButton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+2);
+			}
+		});
+		btnNewButton_7.setBounds(86, 268, 68, 30);
+		frame.getContentPane().add(btnNewButton_7);
+		
+		JButton btnNewButton_8 = new JButton("1");
+		btnNewButton_8.setForeground(new Color(30, 144, 255));
+		btnNewButton_8.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_8.setBackground(SystemColor.textInactiveText);
+		btnNewButton_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+1);
+			}
+		});
+		btnNewButton_8.setBounds(164, 268, 68, 30);
+		frame.getContentPane().add(btnNewButton_8);
+		
+		JButton btnNewButton_9 = new JButton("0");
+		btnNewButton_9.setForeground(new Color(30, 144, 255));
+		btnNewButton_9.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_9.setBackground(SystemColor.textInactiveText);
+		btnNewButton_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val2.setText(val2.getText()+0);
+			}
+		});
+		btnNewButton_9.setBounds(10, 309, 144, 30);
+		frame.getContentPane().add(btnNewButton_9);
+		
+		JButton btnNewButton_10 = new JButton("+");
+		btnNewButton_10.setForeground(new Color(30, 144, 255));
+		btnNewButton_10.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_10.setBackground(SystemColor.textInactiveText);
+		btnNewButton_10.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val1.setText(val2.getText());
+			 actionRecieved.setText("add");
+			 val2.setText(null);
+			}
+		});
+		btnNewButton_10.setBounds(258, 169, 68, 30);
+		frame.getContentPane().add(btnNewButton_10);
+		
+		JButton btnNewButton_11 = new JButton("-");
+		btnNewButton_11.setForeground(new Color(30, 144, 255));
+		btnNewButton_11.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_11.setBackground(SystemColor.textInactiveText);
+		btnNewButton_11.setFont(new Font("Tahoma", Font.BOLD, 18));
+		btnNewButton_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val1.setText(val2.getText());
+				 actionRecieved.setText("sub");
+				 val2.setText(null);
+			}
+		});
+		btnNewButton_11.setBounds(258, 217, 68, 30);
+		frame.getContentPane().add(btnNewButton_11);
+		
+		JButton btnNewButton_12 = new JButton("/");
+		btnNewButton_12.setForeground(new Color(30, 144, 255));
+		btnNewButton_12.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_12.setBackground(SystemColor.textInactiveText);
+		btnNewButton_12.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val1.setText(val2.getText());
+				 actionRecieved.setText("div");
+				 val2.setText(null);
+			}
+		});
+		btnNewButton_12.setBounds(258, 258, 68, 30);
+		frame.getContentPane().add(btnNewButton_12);
+		
+		JButton btnNewButton_13 = new JButton("*");
+		btnNewButton_13.setForeground(new Color(30, 144, 255));
+		btnNewButton_13.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_13.setBackground(SystemColor.textInactiveText);
+		btnNewButton_13.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val1.setText(val2.getText());
+				 actionRecieved.setText("mul");
+				 val2.setText(null);
+			}
+		});
+		btnNewButton_13.setBounds(258, 299, 68, 30);
+		frame.getContentPane().add(btnNewButton_13);
+		
+		JButton btnNewButton_14 = new JButton("=");
+		btnNewButton_14.setForeground(new Color(30, 144, 255));
+		btnNewButton_14.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_14.setBackground(SystemColor.textInactiveText);
+		btnNewButton_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int one=Integer.parseInt(val1.getText());
+				int two=Integer.parseInt(val2.getText());
+
+				if(actionRecieved.getText().equals("add")) {
+					int add=one+two;
+					val2.setText(String.valueOf(add));
+				}
+				if(actionRecieved.getText().equals("sub")) {
+					int sub=one-two;
+					val2.setText(String.valueOf(sub));
+				}
+				if(actionRecieved.getText().equals("div")) {
+					double div=one/two;
+					val2.setText(String.valueOf(div));
+				}
+				if(actionRecieved.getText().equals("mul")) {
+					int mul=one*two;
+					val2.setText(String.valueOf(mul));
+				}
+			}
+		});
+		btnNewButton_14.setBounds(164, 309, 68, 30);
+		frame.getContentPane().add(btnNewButton_14);
+		
+		JButton btnC = new JButton(" CLR");
+		btnC.setForeground(new Color(30, 144, 255));
+		btnC.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnC.setBackground(SystemColor.textInactiveText);
+		btnC.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				val1.setText(null);
+				val2.setText(null);
+			}
+		});
+		btnC.setBounds(258, 338, 68, 30);
+		frame.getContentPane().add(btnC);
+		
+		actionRecieved = new JLabel("");
+		actionRecieved.setForeground(SystemColor.control);
+		actionRecieved.setBounds(10, 360, 37, 20);
+		frame.getContentPane().add(actionRecieved);
+		
+		JLabel lblNewLabel = new JLabel("ADVANCED CALCULATOR");
+		lblNewLabel.setForeground(Color.DARK_GRAY);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(0, 0, 345, 25);
+		frame.getContentPane().add(lblNewLabel);
+		
+		
+	}
+	private 	JLabel actionRecieved;
+	
+}

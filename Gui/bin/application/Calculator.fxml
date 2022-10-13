@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.function">
+   <children>
+      <AnchorPane prefHeight="700.0" prefWidth="700.0">
+         <children>
+            <Pane fx:id="txtsub2" layoutX="12.0" layoutY="69.0" prefHeight="491.0" prefWidth="673.0" style="-fx-background-color: black;">
+               <children>
+                  <Label layoutX="38.0" layoutY="124.0" text="First Subject :" textFill="#f2ecec">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="175.0" text="Second Subject :" textFill="#f2ecec">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="37.0" layoutY="227.0" text="Third Subject :" textFill="#f2ecec">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="278.0" text="Fourth Subject :" textFill="#f2ecec">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="38.0" layoutY="323.0" prefHeight="21.0" prefWidth="102.0" text="Fifth Subject :" textFill="#f2ecec">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtsub1" alignment="TOP_CENTER" layoutX="166.0" layoutY="122.0" promptText="Enter Marks">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtsub2" alignment="TOP_CENTER" layoutX="166.0" layoutY="172.0" promptText="Enter Marks">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtsub3" alignment="TOP_CENTER" layoutX="166.0" layoutY="224.0" promptText="Enter Marks">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtsub4" alignment="TOP_CENTER" layoutX="166.0" layoutY="274.0" promptText="Enter Marks">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtsub5" alignment="TOP_CENTER" layoutX="166.0" layoutY="321.0" promptText="Enter Marks">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="calculate" layoutX="199.0" layoutY="406.0" mnemonicParsing="false" onAction="#calculation" prefHeight="51.0" prefWidth="88.0" text="Calculate">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="380.0" layoutY="26.0" prefHeight="21.0" prefWidth="102.0" text="Sum :" textFill="#f2ecec">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="sum1" alignment="TOP_CENTER" layoutX="493.0" layoutY="21.0" promptText="Enter Marks">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="365.0" layoutY="76.0" prefHeight="21.0" prefWidth="102.0" text="Percentage :" textFill="#f2ecec">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="percentage1" alignment="TOP_CENTER" layoutX="493.0" layoutY="73.0" promptText="Enter Marks">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtsub1" alignment="TOP_CENTER" layoutX="166.0" layoutY="63.0" promptText="Enter Marks">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </Pane>
+            <Label layoutX="52.0" layoutY="131.0" text="First Subject :" textFill="#f2ecec">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="390.0" layoutY="36.0" prefHeight="21.0" prefWidth="102.0" text="Sum :" textFill="#f2ecec">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="181.0" layoutY="24.0" prefHeight="45.0" prefWidth="395.0" text="Student Record Calculator" textAlignment="RIGHT">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
